@@ -1,0 +1,35 @@
+@use "../../../styles/abstracts" as *;
+
+.button {
+  @include button;
+
+  &.primary {
+    // @include gradient(get-color(main, darkest));
+    background: get-color(sass-mono, 800);
+  }
+
+  &.pill {
+    border-radius: 47rem;
+  }
+
+  &.icon {
+    margin: 0;
+    padding: 0.29rem;
+  }
+
+  &:disabled {
+    background: get-color(sass-mono, 800);
+    color: get-color(sass-mono, 800);
+  }
+}
+
+.bgColor {
+  background: transparent;
+  @include border(transparent);
+  color: get-color(gm-medium, 500);
+
+  &:hover:enabled {
+    background: transparent;
+    color: $neutral;
+  }
+}

@@ -1,0 +1,6 @@
+@use 'styles/abstracts';
+
+.error {
+  background-color: abstracts.color(state, error);
+  @include abstracts.paddingBox;
+}

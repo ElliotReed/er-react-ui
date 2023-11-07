@@ -1,0 +1,11 @@
+@use "styles/abstracts";
+
+.bgColor {
+  background: transparent;
+  @include abstracts.border(transparent);
+
+  &:hover:enabled {
+    background: abstracts.color(black, 700);
+    // color: abstracts.$neutral;
+  }
+}

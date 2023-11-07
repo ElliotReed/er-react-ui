@@ -1,0 +1,26 @@
+@use "styles/abstracts";
+
+.logo {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 1em;
+  font-weight: 400;
+  color: abstracts.$white;
+
+  .icon {
+    padding-right: abstracts.$space-xsm;
+  }
+
+  span {
+
+    &.smallDisplay {
+      display: none;
+
+      @include abstracts.respondTo(smartphone) {
+        display: inline-block;
+      }
+    }
+
+  }
+}

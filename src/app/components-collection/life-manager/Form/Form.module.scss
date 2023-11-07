@@ -1,0 +1,62 @@
+@import "styles";
+
+.Form {
+  .FormHeader {
+    padding: $padding;
+    font-size: $goldenPercent;
+
+    .title {
+      margin: 0;
+      text-transform: capitalize;
+    }
+  }
+
+  .FormBody {
+    overflow: hidden;
+    padding: $padding;
+    font-size: 1rem;
+
+    label {
+      font-size: 1rem * $smaller;
+      font-weight: 500;
+      text-transform: capitalize;
+      display: block;
+    }
+
+    input,
+    textarea {
+      margin-bottom: $margin;
+      width: 100%;
+      color: $black;
+      background-color: $white;
+      box-shadow: inset -1px -1px 0px rgba($black, 38%);
+      @include border($color: $primary, $width: 0.11rem);
+      @include paddingBox;
+
+      &[type="checkbox"] {
+        display: inline-block;
+        margin-left: $margin * $goldenRatioDecrease;
+        width: initial;
+      }
+
+      &:focus {
+        outline: none;
+        @include border($color: $primary, $width: 0.15rem);
+      }
+
+      &:disabled {
+        visibility: hidden;
+      }
+
+      &::selection {
+        color: $white;
+        background-color: $primary;
+      }
+    }
+  }
+
+  .FormFooter {
+    padding: $padding;
+    border-top: $neutral;
+  }
+}

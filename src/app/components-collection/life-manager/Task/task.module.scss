@@ -1,0 +1,32 @@
+@import "styles";
+
+.task {
+  @include enterAnimation;
+  padding: $padding;
+
+  @include respondTo(desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1.618fr;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: $margin;
+    align-items: center;
+
+    @include respondTo(desktop) {
+      grid-template-rows: auto 1fr;
+    }
+  }
+}
+
+.theme__light {
+  background: get-color(base, light);
+  color: get-color(base, dark);
+}
+
+.theme__dark {
+  background: get-color(base, dark);
+  color: get-color(base, light);
+}

@@ -1,0 +1,61 @@
+@use "styles/abstracts";
+
+.Form {
+  color: abstracts.$white;
+}
+
+.FormHeader {
+  border: 1px solid transparent; // to prevent margin collapse
+  background-color: abstracts.$primary;
+
+  .title {
+    color: abstracts.$white;
+    line-height: 1;
+    font-size: abstracts.em-scale(600);
+    text-transform: capitalize;
+    margin-block-start: abstracts.$space-lg;
+    margin-block-end: abstracts.$space-sm;
+    margin-inline: abstracts.$space-md;
+  }
+}
+
+.FormBody {
+
+  // ! TODO: Switch to Input components to remove these styles
+  label {
+    display: block;
+    text-transform: capitalize;
+    margin-inline: abstracts.$space-md;
+    margin-block-start: abstracts.$space-md;
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      color: abstracts.$black;
+      margin-bottom: abstracts.$margin;
+      @include abstracts.paddingBox;
+
+      &[type="checkbox"] {
+        display: inline-block;
+        width: initial;
+        margin-left: abstracts.$margin * abstracts.$goldenRatioDecrease;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:disabled {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.FormFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  border-top: abstracts.$border;
+}
